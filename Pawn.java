@@ -27,7 +27,7 @@ public class Pawn extends Piece {
         String aboveRow2 = String.valueOf((char) (loc.charAt(1)+2));
         String bellowRow2 = String.valueOf((char) (loc.charAt(1)-2));
 
-        if (b.getPiece(loc).color() == Color.WHITE) {
+        if (this.color() == Color.WHITE) {
             if( loc.charAt(1) == '8') { 
                 return validMoves; 
             } else {
@@ -53,7 +53,7 @@ public class Pawn extends Piece {
                     validMoves.add(loc.charAt(0)+aboveRow2);
                 }
             }
-        } else if (b.getPiece(loc).color() == Color.BLACK) {
+        } else if (this.color() == Color.BLACK) {
             if( loc.charAt(1) == '1') { 
                 return validMoves; 
             } else {
