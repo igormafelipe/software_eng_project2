@@ -15,10 +15,14 @@ public class Bishop extends Piece {
 
     public List<String> moves(Board b, String loc) {
         List<String> possibleMoves = new ArrayList<String>();
-        possibleMoves.addAll(boardHelper.checkLeftDownDiagonal(b, loc, this));
-        possibleMoves.addAll(boardHelper.checkRightDownDiagonal(b, loc, this));
-        possibleMoves.addAll(boardHelper.checkLeftUpDiagonal(b, loc, this));
-        possibleMoves.addAll(boardHelper.checkRightUpDiagonal(b, loc, this));
+        possibleMoves.addAll(boardHelper.checkLeftDownDiagonal(b, loc, 
+                                                                this.color()));
+        possibleMoves.addAll(boardHelper.checkRightDownDiagonal(b, loc, 
+                                                                this.color()));
+        possibleMoves.addAll(boardHelper.checkLeftUpDiagonal(b, loc, 
+                                                                this.color()));
+        possibleMoves.addAll(boardHelper.checkRightUpDiagonal(b, loc, 
+                                                                this.color()));
         return possibleMoves;
     }
 

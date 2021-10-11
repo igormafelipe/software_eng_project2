@@ -18,11 +18,11 @@ public class boardHelper {
     }
 
     //Assume piece exists in loc.
-    public static List<String> checkRightUpDiagonal(Board b, String loc, Piece p) {
+    public static List<String> checkRightUpDiagonal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col < 7 && row < 7) {
             col += 1;
             row += 1;
@@ -39,11 +39,11 @@ public class boardHelper {
     }
 
     //Assume piece exists in loc.
-    public static List<String> checkLeftUpDiagonal(Board b, String loc, Piece p) {
+    public static List<String> checkLeftUpDiagonal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col > 0 && row < 7) {
             col -= 1;
             row += 1;
@@ -60,11 +60,11 @@ public class boardHelper {
     }
 
     //Assume piece exists in loc.
-    public static List<String> checkRightDownDiagonal(Board b, String loc, Piece p) {
+    public static List<String> checkRightDownDiagonal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col < 7 && row > 0) {
             col += 1;
             row -= 1;
@@ -81,11 +81,11 @@ public class boardHelper {
     }
 
     //Assume piece exists in loc.
-    public static List<String> checkLeftDownDiagonal(Board b, String loc, Piece p) {
+    public static List<String> checkLeftDownDiagonal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col > 0 && row > 0) {
             col -= 1;
             row -= 1;
@@ -102,11 +102,11 @@ public class boardHelper {
     }
 
 
-    public static List<String> checkLeftHorizontal(Board b, String loc, Piece p) {
+    public static List<String> checkLeftHorizontal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col > 0) {
             col -= 1;
             // System.out.println("hello");
@@ -122,11 +122,11 @@ public class boardHelper {
     }
 
 
-    public static List<String> checkRightHorizontal(Board b, String loc, Piece p) {
+    public static List<String> checkRightHorizontal(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(col < 7) {
             col += 1;
             // System.out.println("hello");
@@ -141,11 +141,11 @@ public class boardHelper {
         return possibleMoves;
     }
 
-    public static List<String> checkUpVertical(Board b, String loc, Piece p) {
+    public static List<String> checkUpVertical(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(row < 7) {
             row += 1;
             // System.out.println("hello");
@@ -161,11 +161,11 @@ public class boardHelper {
     }
 
 
-    public static List<String> checkDownVertical(Board b, String loc, Piece p) {
+    public static List<String> checkDownVertical(Board b, String loc, Color c) {
         List<String> possibleMoves = new ArrayList<String>();
         int col = getCol(loc);
         int row = getRow(loc);
-        Color originalColor = p.color();
+        Color originalColor = c;
         while(row > 0) {
             row -= 1;
             // System.out.println("hello");
