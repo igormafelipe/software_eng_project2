@@ -58,6 +58,17 @@ public class Board {
 
         pieces[tcol][trow] = pieces[fcol][frow];
         pieces[fcol][frow] = null;
+
+        if (this.getPiece(to) != null) {
+            for (BoardListener listener : listeners) {
+                listener.onCapture(this.getPiece(from), this.getPiece(to));
+            }
+        }
+
+        for (BoardListener listener : listeners) {
+            listener.onMove(from, to, this.getPiece(from));
+        }
+
     }
 
     public void clear() {
