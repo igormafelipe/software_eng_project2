@@ -24,6 +24,8 @@ public class Pawn extends Piece {
         String rightCol = String.valueOf((char) (loc.charAt(0)+1));
         String aboveRow = String.valueOf((char) (loc.charAt(1)+1));
         String bellowRow = String.valueOf((char) (loc.charAt(1)-1));
+        String aboveRow2 = String.valueOf((char) (loc.charAt(1)+2));
+        String bellowRow2 = String.valueOf((char) (loc.charAt(1)-2));
 
         if (b.getPiece(loc).color() == Color.WHITE) {
             if( loc.charAt(1) == '8') { 
@@ -31,17 +33,12 @@ public class Pawn extends Piece {
             } else {
                 //Checking diagonals
                 if (loc.charAt(0) != 'a' && 
-                    b.getPiece(leftCol+aboveRow) == null) {
-                    validMoves.add(leftCol+aboveRow);
-                } else if (loc.charAt(0) != 'a' && 
-                     b.getPiece(leftCol+aboveRow).color() != Color.WHITE) {
+                    b.getPiece(leftCol+aboveRow) != null &&
+                    b.getPiece(leftCol+aboveRow).color() != Color.WHITE) {
                     validMoves.add(leftCol+aboveRow);
                 }
-                
                 if (loc.charAt(0) != 'h' && 
-                    b.getPiece(rightCol+aboveRow) == null) {
-                    validMoves.add(rightCol+aboveRow);
-                } else if (loc.charAt(0) != 'h' && 
+                    b.getPiece(rightCol+aboveRow) != null &&
                     b.getPiece(rightCol+aboveRow).color() != Color.WHITE) {
                     validMoves.add(rightCol+aboveRow);
                 }
@@ -50,24 +47,24 @@ public class Pawn extends Piece {
                 if (b.getPiece(loc.charAt(0)+aboveRow) == null) {
                     validMoves.add(loc.charAt(0)+aboveRow);
                 }
+
+                if (loc.charAt(1) == '2' && 
+                    b.getPiece(loc.charAt(0)+aboveRow2) == null) {
+                    validMoves.add(loc.charAt(0)+aboveRow2);
+                }
             }
         } else if (b.getPiece(loc).color() == Color.BLACK) {
-            if( loc.charAt(1) == '8') { 
+            if( loc.charAt(1) == '1') { 
                 return validMoves; 
             } else {
                 //Checking diagonals
                 if (loc.charAt(0) != 'a' && 
-                    b.getPiece(leftCol+bellowRow) == null) {
-                    validMoves.add(leftCol+bellowRow);
-                } else if (loc.charAt(0) != 'a' && 
-                     b.getPiece(leftCol+bellowRow).color() != Color.BLACK) {
+                    b.getPiece(leftCol+bellowRow) != null &&
+                    b.getPiece(leftCol+bellowRow).color() != Color.BLACK) {
                     validMoves.add(leftCol+bellowRow);
                 }
-                
                 if (loc.charAt(0) != 'h' && 
-                    b.getPiece(rightCol+bellowRow) == null) {
-                    validMoves.add(rightCol+bellowRow);
-                } else if (loc.charAt(0) != 'h' && 
+                    b.getPiece(rightCol+bellowRow) != null &&
                     b.getPiece(rightCol+bellowRow).color() != Color.BLACK) {
                     validMoves.add(rightCol+bellowRow);
                 }
@@ -75,6 +72,11 @@ public class Pawn extends Piece {
                 //Checking above, cannot eat so only check if null
                 if (b.getPiece(loc.charAt(0)+bellowRow) == null) {
                     validMoves.add(loc.charAt(0)+bellowRow);
+                }
+
+                if (loc.charAt(1) == '7' && 
+                    b.getPiece(loc.charAt(0)+bellowRow2) == null) {
+                    validMoves.add(loc.charAt(0)+bellowRow2);
                 }
             }
         }
