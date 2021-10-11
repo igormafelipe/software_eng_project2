@@ -15,10 +15,10 @@ public class Rook extends Piece {
 
     public List<String> moves(Board b, String loc) {
         List<String> possibleMoves = new ArrayList<String>();
-        possibleMoves.addAll(boardHelper.checkLeftHorizontal(b, loc));
-        possibleMoves.addAll(boardHelper.checkRightHorizontal(b, loc));
-        possibleMoves.addAll(boardHelper.checkUpVertical(b, loc));
-        possibleMoves.addAll(boardHelper.checkDownVertical(b, loc));
+        possibleMoves.addAll(boardHelper.checkLeftHorizontal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkRightHorizontal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkUpVertical(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkDownVertical(b, loc, this.color()));
         return possibleMoves;
     }
 

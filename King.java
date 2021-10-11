@@ -18,7 +18,7 @@ public class King extends Piece {
 	    List<String> validMoves = new ArrayList<String>();
         int col = boardHelper.getCol(loc);
         int row = boardHelper.getRow(loc);
-        Color originalColor = b.getPiece(loc).color();
+        Color originalColor = this.color();
         int[][] tocheck = {{-1, 1}, {0, 1}, {1, 1}, 
                            {-1, 0},         {1, 0},
                            {-1,-1}, {0,-1}, {1,-1}};

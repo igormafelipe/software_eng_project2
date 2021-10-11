@@ -16,14 +16,14 @@ public class Queen extends Piece {
 
     public List<String> moves(Board b, String loc) {
         List<String> possibleMoves = new ArrayList<String>();
-        possibleMoves.addAll(boardHelper.checkLeftHorizontal(b, loc));
-        possibleMoves.addAll(boardHelper.checkRightHorizontal(b, loc));
-        possibleMoves.addAll(boardHelper.checkUpVertical(b, loc));
-        possibleMoves.addAll(boardHelper.checkDownVertical(b, loc));
-        possibleMoves.addAll(boardHelper.checkLeftDownDiagonal(b, loc));
-        possibleMoves.addAll(boardHelper.checkRightDownDiagonal(b, loc));
-        possibleMoves.addAll(boardHelper.checkLeftUpDiagonal(b, loc));
-        possibleMoves.addAll(boardHelper.checkRightUpDiagonal(b, loc));
+        possibleMoves.addAll(boardHelper.checkLeftHorizontal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkRightHorizontal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkUpVertical(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkDownVertical(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkLeftDownDiagonal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkRightDownDiagonal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkLeftUpDiagonal(b, loc, this.color()));
+        possibleMoves.addAll(boardHelper.checkRightUpDiagonal(b, loc, this.color()));
         return possibleMoves;
     }
 }
