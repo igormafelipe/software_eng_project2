@@ -34,7 +34,6 @@ public class Chess {
 				}
 				String loc = line.substring(0, 2);
 				String p = line.substring(3,5);
-				System.out.println(p);
 				theBoard.addPiece(Piece.createPiece(p), loc);
 			};
 		}
@@ -49,10 +48,6 @@ public class Chess {
 				}
 				String initialCoord = line.substring(0,2);
 				String finalCoord = line.substring(3,5);
-				System.out.println(initialCoord + " " + finalCoord);
-				for (String move : theBoard.getPiece(initialCoord).moves(theBoard, initialCoord)) {
-					System.out.println("valid move: " + move);		
-				}
 				theBoard.movePiece(initialCoord, finalCoord);
 			}
 		}
