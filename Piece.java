@@ -15,7 +15,14 @@ abstract public class Piece {
     // Look up the factory in the map, and call it on the map.
     public static Piece createPiece(String name) {
         char type = name.charAt(1);
-        Color color = name.charAt(0) == 'w' ? Color.WHITE : Color.BLACK;
+        Color color;
+        if (name.charAt(0) == 'w') {
+            color = Color.WHITE;
+        } else if (name.charAt(0) == 'b') {
+            color = Color.BLACK;
+        } else {
+            throw new IllegalArgumentException();
+        }
 	    return nameToFactory.get(type).create(color);
     }
 
