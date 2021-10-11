@@ -56,8 +56,8 @@ public class Board {
         int tcol = boardHelper.getCol(to);
         int trow = boardHelper.getRow(to);
 
-        pieces[tcol][trow] = pieces[fcol][frow];
-        pieces[fcol][frow] = null;
+        this.pieces[tcol][trow] = pieces[fcol][frow];
+        this.pieces[fcol][frow] = null;
 
         if (this.getPiece(to) != null) {
             for (BoardListener listener : listeners) {
