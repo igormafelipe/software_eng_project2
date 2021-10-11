@@ -1,0 +1,10 @@
+Pawn class and factory implemented
+
+Try implementing board, and adding the pawns in.
+
+Got board and pawn working, as well as pawn factory. Tested it too.
+
+
+Currently implementing bishop and a helper function that will check diagonals from a location. It will also check horizontals (so the queen and tower can use it)
+
+Diagonal currently bugging: Not sure what is going on, print statements do not help. Complaining about illegalArgument. Maybe the reconversion from two ints to a location is bad?? idk
