@@ -15,7 +15,7 @@ public class Bishop extends Piece {
 
     public List<String> moves(Board b, String loc) {
         List<String> possibleMoves = new ArrayList<String>();
-        if (b.getPiece(loc) == null) { return possibleMoves; }
+        if (b.getPiece(loc) == null) { throw new IllegalArgumentException(); }
         possibleMoves.addAll(boardHelper.checkLeftDownDiagonal(b, loc));
         possibleMoves.addAll(boardHelper.checkRightDownDiagonal(b, loc));
         possibleMoves.addAll(boardHelper.checkLeftUpDiagonal(b, loc));
